@@ -1,0 +1,33 @@
+const list = [
+  {
+    id: 'a',
+    firstname: 'Sairam',
+    lastname: 'Varma',
+    year: 2002,
+  },
+  {
+    id: 'b',
+    firstname: 'Sahithi',
+    lastname: 'Turubati',
+    year: 2003,
+  },
+];
+
+const App = () => <List list={list} />;
+
+const List = ({ list }) => (
+  <ul>
+    {list.map(item => (
+      <ListItem key={item.id} item={item} />
+    ))}
+  </ul>
+);
+
+const ListItem = ({ item }) => (
+  <li>
+    <div>{item.id}</div>
+    <div>{item.firstname}</div>
+    <div>{item.lastname}</div>
+    <div>{item.year}</div>
+  </li>
+);
